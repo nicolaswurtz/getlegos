@@ -2,3 +2,4 @@
 *.jpg
 *.pdf
 *.csv
+/vendor
