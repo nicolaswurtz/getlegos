@@ -18,3 +18,5 @@ Pas ou peu de contrôle d'erreur, deal with it :)
 
 ### Dépendances
 Via composer : https://climate.thephpleague.com/ (pour coloriser la sortie CLI)
+
+	composer require league/climate
