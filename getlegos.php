@@ -2,7 +2,6 @@
 
 require_once('vendor/autoload.php');
 $console = new League\CLImate\CLImate;
-$formats = ['V29','V.29','V 29','V. 29'];
 
 function recupListe($nom_fichier)
 {
@@ -60,7 +59,7 @@ function recupInfos($id)
             $num++;
             $max = count($produit[0]->buildingInstructions);
         }
-        if (strpos($description,'V39') === false) {
+        if (strpos($description,'V39') === false or strpos($description,'V29/V39') !== false) {
             // Sauvegarde photos pdf
             $urlphoto = 'img/' . $produit[0]->productId.'.'.$num.'_'.$max.'.pdf.'.substr($bi->frontpageInfo,-3);
             $urlpdf = 'pdf/' . $produit[0]->productId.'.'.$num.'_'.$max.'.pdf';
