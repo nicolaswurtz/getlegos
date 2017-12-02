@@ -1,0 +1,12 @@
+{
+    "name": "elow/listelegos",
+    "authors": [
+        {
+            "name": "Nicolas Wurtz",
+            "email": "git@nethenic.net"
+        }
+    ],
+    "require": {
+        "league/climate": "^3.2"
+    }
+}
