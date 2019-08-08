@@ -7,7 +7,7 @@ function recupListe($nom_fichier)
 {
     $fichier = fopen($nom_fichier,'r');
     while ($ligne = fgetcsv($fichier)) {
-        $legos[$ligne[0]] = array('id' => $ligne[0], 'desc_fr' => $ligne[1]);
+        $legos[$ligne[0]] = array('id' => $ligne[0], 'desc_fr' => isset($ligne[1]) ? $ligne[1] : '');
     }
     fclose($fichier);
     return $legos;
@@ -48,6 +48,7 @@ function recupInfos($id)
     $infos_photo = 'img/' . $produit[0]->productId.'.photo.'.substr($produit[0]->productImage,-3);
     exec('wget -q '.$produit[0]->productImage.' -O ' . __DIR__ . '/'.$infos_photo);
 
+    $num = 0;
     foreach ($produit[0]->buildingInstructions as $bi) {
         $description = str_replace(['V39','V.39','V 39','V. 39'],'V39',strtoupper($bi->description));
         if (strpos(substr($description,-4),'/') !== false) {
